@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAFTAH | The New Concept</title>
+    <title>PAFTAH | بفتة - مفهوم جديد للنظافة</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,10 +14,10 @@
             --bg-body: #F5F5F7;
             --text-primary: #1D1D1F;
             --text-secondary: #86868B;
-            --brand-purple: #6A4C9C; /* اللون الأساسي لبفتة */
-            --brand-purple-light: #9982bb; /* اللون الثانوي */
+            --brand-purple: #6A4C9C;
+            --brand-purple-light: #9982bb; 
             --bar-bg: #E5E5EA;
-            --radius: 28px; /* الزوايا الموحدة للهوية */
+            --radius: 28px;
             --main-gradient: linear-gradient(135deg, var(--brand-purple), var(--brand-purple-light));
             --content-width: 1100px;
         }
@@ -41,114 +41,62 @@
             border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000;
             display: flex; align-items: center; justify-content: center;
         }
-        .nav-container { 
-            width: 100%; max-width: var(--content-width); padding: 0 24px;
-            display: flex; justify-content: center; align-items: center; 
-        }
-        
-        .logo-img { height: 60px; width: auto; display: block; }
+        .nav-container { width: 100%; max-width: var(--content-width); padding: 0 24px; display: flex; justify-content: center; align-items: center; }
 
-        /* --- الهيرو --- */
+        /* --- الهيرو (تم تعديل المسافات للتوسط الدقيق) --- */
         .hero {
-            padding-top: 200px; padding-bottom: 60px; text-align: center; 
+            padding-top: 200px; 
+            padding-bottom: 0; /* تم الإلغاء لضبط المسافة السفلية بدقة */
+            text-align: center; 
             max-width: var(--content-width); margin: 0 auto;
             display: flex; flex-direction: column; align-items: center; position: relative;
             padding-left: 24px; padding-right: 24px;
         }
 
-        .hero h1 { 
-            font-size: 4.5rem; font-weight: 800; color: #000; margin-bottom: 25px; 
-            letter-spacing: -1px; position: relative; z-index: 1; line-height: 1.4;
-        }
-        
-        .gradient-text {
-            background: var(--main-gradient);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            display: inline-block; padding-bottom: 15px;
-        }
+        .hero h1 { font-size: 4.5rem; font-weight: 800; color: #000; margin-bottom: 25px; letter-spacing: -1px; position: relative; z-index: 1; line-height: 1.4; }
+        .gradient-text { background: var(--main-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; padding-bottom: 15px; }
+        .brand-desc { font-size: 1.3rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 40px; font-weight: 500; }
 
-        .brand-desc { 
-            font-size: 1.3rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 40px; 
-            font-weight: 500;
-        }
-
+        /* الأزرار */
         .cta-group { display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap; }
-        
         .cta-btn {
             padding: 14px 36px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; 
-            text-decoration: none; transition: all 0.3s ease;
-            position: relative; z-index: 1; overflow: hidden;
-            display: inline-block;
+            text-decoration: none; transition: all 0.3s ease; position: relative; z-index: 1; overflow: hidden; display: inline-block;
         }
+        .btn-primary { background: #000; color: #fff; border: 2px solid #000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .btn-primary:hover { background: #333; border-color: #333; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .btn-outline { background: transparent; color: #000; border: 2px solid #000; }
+        .btn-outline:hover { background: #000; color: #fff; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
 
-        .btn-primary { 
-            background: #000; color: #fff; border: 2px solid #000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .btn-primary:hover { 
-            background: #333; border-color: #333;
-            transform: translateY(-3px); 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .btn-outline { 
-            background: transparent; color: #000; border: 2px solid #000; 
-        }
-        .btn-outline:hover { 
-            background: #000; color: #fff; 
-            transform: translateY(-3px); 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
+        /* صورة المنتج */
         .product-img {
-            width: 100%; 
-            max-width: 480px; /* الحجم المصغر المعتمد */
-            filter: drop-shadow(0 50px 100px rgba(106, 76, 156, 0.2));
-            margin-top: 50px; 
-            transition: transform 0.5s;
-            content: url('paftah-new-v99.png');
+            width: 100%; max-width: 480px; filter: drop-shadow(0 50px 100px rgba(106, 76, 156, 0.2));
+            margin-top: 50px; transition: transform 0.5s; content: url('paftah-new-v99.png');
             animation: floatHero 6s ease-in-out infinite;
         }
-
-        @media (max-width: 900px) {
-            .product-img {
-                max-width: 380px;
-                margin-top: 30px;
-            }
-        }
-
+        @media (max-width: 900px) { .product-img { max-width: 380px; margin-top: 30px; } }
         @keyframes floatHero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
+        /* وصف المنتج (تم ضبط الهوامش للتوسط المثالي) */
         .product-card-desc {
-            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 20px; padding: 40px;
-            max-width: 780px; margin: 40px auto 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px; padding: 40px; max-width: 780px;
+            /* الهامش العلوي 60، والسفلي 40 + 20 (حشوة الشبكة) = 60 متطابقة */
+            margin: 60px auto 40px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
             font-size: 1.2rem; color: var(--text-primary); line-height: 2; font-weight: 500;
         }
 
         /* --- الشبكة --- */
-        .grid-section { 
-            padding: 20px 24px 80px;
-            background-image: radial-gradient(circle at 50% 50%, rgba(153, 130, 187, 0.04) 0%, transparent 70%);
-        }
-        .bento-grid {
-            display: grid; gap: 24px; max-width: var(--content-width); margin: 0 auto;
-            grid-template-columns: 1fr;
-        }
-        
+        .grid-section { padding: 20px 24px 80px; background-image: radial-gradient(circle at 50% 50%, rgba(153, 130, 187, 0.04) 0%, transparent 70%); }
+        .bento-grid { display: grid; gap: 24px; max-width: var(--content-width); margin: 0 auto; grid-template-columns: 1fr; }
         .card {
-            background: #fff; border-radius: var(--radius); padding: 35px;
-            display: flex; flex-direction: column; position: relative; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: 0.3s;
-            height: 100%; justify-content: space-between;
+            background: #fff; border-radius: var(--radius); padding: 35px; display: flex; flex-direction: column; 
+            position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: 0.3s; height: 100%; justify-content: space-between;
         }
         .card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
 
-        .lbl { 
-            display: flex; justify-content: space-between; align-items: center; width: 100%;
-            font-size: 0.85rem; font-weight: 700; color: #A0A0A0; margin-bottom: 20px;
-        }
-
+        .lbl { display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: 0.85rem; font-weight: 700; color: #A0A0A0; margin-bottom: 20px; }
         .val { font-size: 4rem; font-weight: 800; line-height: 1; color: var(--brand-purple-light); margin-bottom: 10px; }
         .val small { font-size: 2.5rem; }
         .desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0; }
@@ -157,19 +105,20 @@
             .bento-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto auto; }
             .item-matter { grid-column: span 2; grid-row: 1; }
             .item-omax { grid-column: 3; grid-row: span 2; height: 100%; }
-            .item-saso { grid-column: 1; grid-row: 2; }
-            .item-oxygen { grid-column: 2; grid-row: 2; }
+            /* الأكسجين يمين والساسو وسط */
+            .item-oxygen { grid-column: 1; grid-row: 2; }
+            .item-saso { grid-column: 2; grid-row: 2; }
             .item-pack { grid-column: span 3; grid-row: 3; }
         }
 
-        /* Benchmark */
+        /* Benchmark & Shimmer */
         .benchmark-box { margin-top: auto; padding-top: 20px; border-top: 1px solid #f5f5f5; }
         .bench-item { margin-bottom: 15px; }
         .bench-meta { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 6px; }
         .bench-track { width: 100%; height: 10px; background: var(--bar-bg); border-radius: 20px; overflow: hidden; position: relative; }
         .bench-fill { height: 100%; border-radius: 20px; transition: width 1s ease-out; }
-        .fill-std { background: #C7C7CC; width: 30%; }
-        .fill-paftah { background: var(--main-gradient); width: 95%; position: relative; overflow: hidden; }
+        .fill-std { background: #C7C7CC; }
+        .fill-paftah { background: var(--main-gradient); position: relative; overflow: hidden; }
         .shimmer-bar {
             position: absolute; top: 0; left: 0; bottom: 0; width: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
@@ -180,8 +129,7 @@
         /* OMAX */
         .omax-glass {
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245, 240, 255, 0.9));
-            border: 1px solid rgba(153, 130, 187, 0.15); 
-            box-shadow: 0 20px 60px rgba(106, 76, 156, 0.12);
+            border: 1px solid rgba(153, 130, 187, 0.15); box-shadow: 0 20px 60px rgba(106, 76, 156, 0.12);
             justify-content: center; text-align: center;
         }
         .omax-glass::before {
@@ -190,35 +138,21 @@
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
         }
-        .omax-gradient-text { 
-            background: var(--main-gradient); 
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-            display: inline-block; margin-bottom: 25px; 
-        }
-        .omax-icon { 
-            font-size: 5rem; margin-bottom: 20px; animation: pulse 3s infinite ease-in-out; 
-            background: var(--main-gradient); 
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-        }
-        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
+        .omax-gradient-text { background: var(--main-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; margin-bottom: 25px; }
+        .omax-icon { font-size: 5rem; margin-bottom: 20px; animation: pulse 3s infinite ease-in-out; background: var(--main-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
-        /* SASO Layout */
-        .sync-layout { 
-            display: flex; align-items: center; justify-content: space-between; 
-            margin-bottom: 20px; gap: 10px; height: 100px; 
-        }
+        /* SASO & Layout */
+        .sync-layout { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 10px; height: 100px; }
         .saso-svg-container {
-            width: 100px; height: 100px; flex-shrink: 0;
-            background-color: var(--brand-purple-light);
-            border-radius: 22px; 
-            display: flex; align-items: center; justify-content: center;
-            padding: 12px;
+            width: 100px; height: 100px; flex-shrink: 0; background-color: var(--brand-purple-light); border-radius: 22px; 
+            display: flex; align-items: center; justify-content: center; padding: 12px;
         }
         .saso-svg-container svg { width: 100%; height: auto; }
-        .saso-text-val {
-            font-size: 3.5rem; font-weight: 800; line-height: 1; 
-            color: var(--brand-purple-light); margin: 0;
-        }
+        .saso-text-val { font-size: 3.5rem; font-weight: 800; line-height: 1; color: var(--brand-purple-light); margin: 0; }
+        .oxygen-val { font-size: 3.5rem; font-weight: 800; line-height: 1; color: var(--brand-purple-light); display: flex; align-items: baseline; gap: 5px; }
+        .oxygen-val small { font-size: 2rem; font-weight: 600; }
+        .sync-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; min-height: 60px; display: flex; align-items: flex-end; }
 
         /* Packaging */
         .sizes-row { display: flex; justify-content: space-between; align-items: flex-start; margin-top: auto; gap: 10px; }
@@ -229,24 +163,17 @@
         .size-label { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); }
         .size-usage { font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; margin-top: 4px; }
 
-        /* Guarantee & Flash */
+        /* Guarantee & Flash (7s) */
         .guarantee-wrapper { padding: 40px 24px; display: flex; justify-content: center; width: 100%; }
         .platinum-card {
             width: 100%; max-width: var(--content-width); background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 40%, #c0c0c0 100%);
             border-radius: 24px; padding: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); position: relative; overflow: hidden;
         }
         .flash-shine {
-            position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
-            transform: skewX(-20deg); 
-            animation: flash 7s infinite cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none; z-index: 10;
+            position: absolute; top: 0; left: -150%; width: 50%; height: 100%; background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
+            transform: skewX(-20deg); animation: flash 7s infinite cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; z-index: 10;
         }
-        @keyframes flash { 
-            0% { left: -150%; } 
-            25% { left: 150%; } 
-            100% { left: 150%; } 
-        }
+        @keyframes flash { 0% { left: -150%; } 25% { left: 150%; } 100% { left: 150%; } }
         .platinum-inner {
             background: #fff; border-radius: 21px; padding: 50px 30px; text-align: center; position: relative; z-index: 2;
             background-image: radial-gradient(#f0f0f0 1.5px, transparent 1.5px); background-size: 20px 20px;
@@ -260,26 +187,20 @@
         .contact-group { margin-top: 25px; }
         .contact-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; text-decoration: none; transition: 0.3s; }
         .contact-icon { width: 36px; height: 36px; background: #F5F5F7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--brand-purple); font-size: 0.9rem; }
-        .contact-text { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--text-primary); font-size: 1rem; direction: ltr; display: inline-block; unicode-bidi: embed; }
+        .contact-text { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--text-primary); font-size: 1rem; direction: ltr; }
         .contact-item:hover .contact-icon { background: var(--brand-purple); color: #fff; }
-        .contact-item:hover .contact-text { color: var(--brand-purple); }
-        .footer-heading { font-size: 0.85rem; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; font-family: 'Poppins', sans-serif; }
+        .footer-heading { font-size: 0.85rem; font-weight: 700; color: #1D1D1F; text-transform: uppercase; margin-bottom: 25px; font-family: 'Poppins'; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 14px; }
-        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; transition: 0.2s; display: inline-block; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; transition: 0.2s; }
         .footer-links a:hover { color: var(--brand-purple); transform: translateX(-3px); }
         .footer-bottom { border-top: 1px solid #F0F0F0; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         .copyright { font-size: 0.85rem; color: #999; }
-        .social-legal { display: flex; align-items: center; gap: 30px; }
-        .legal-links a { font-size: 0.85rem; color: #888; text-decoration: none; margin-left: 20px; transition: 0.2s; }
-        .legal-links a:hover { color: #000; text-decoration: underline; }
+        .legal-links a { font-size: 0.85rem; color: #888; text-decoration: none; margin-right: 20px; }
 
         @media (max-width: 900px) {
             .hero h1 { font-size: 3rem; }
             .footer-top { grid-template-columns: 1fr; gap: 40px; text-align: right; }
-            .footer-bottom { flex-direction: column-reverse; align-items: center; text-align: center; }
-            .social-legal { flex-direction: column; gap: 15px; }
-            .legal-links a { margin: 0 10px; }
             .contact-item { justify-content: flex-start; }
         }
     </style>
@@ -301,11 +222,12 @@
         <p class="brand-desc">علامة تجارية سعودية بمعايير عالمية. نبتكر حلولاً ذكية لحياة أنقى.</p>
 
         <div class="cta-group">
-            <a href="tel:+966598665571" class="cta-btn btn-primary">طلب للشركات</a>
-            <a href="tel:+966598665571" class="cta-btn btn-outline">طلب عينة</a>
+            <a href="mailto:info@paftah.com" class="cta-btn btn-primary">طلب للشركات</a>
+            <a href="mailto:info@paftah.com" class="cta-btn btn-outline">طلب عينة</a>
         </div>
 
         <img src="paftah-new-v99.png" class="product-img" alt="بفتة">
+        
         <div class="product-card-desc">
             بفتة ليس مجرد مسحوق غسيل، بل هو قوة تنظيف مركزة. بفضل تركيبته المتطورة، يمنحك نظافة تتغلغل في أدق الألياف، ونعومة تشعر بها، لتعود ملابسك كما لو كانت جديدة في كل مرة.
         </div>
@@ -325,11 +247,7 @@
                     </div>
                     <div class="bench-item">
                         <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span style="color:var(--brand-purple); font-weight:700;">18.93%</span></div>
-                        <div class="bench-track">
-                            <div class="bench-fill fill-paftah">
-                                <div class="shimmer-bar"></div>
-                            </div>
-                        </div>
+                        <div class="bench-track"><div class="bench-fill fill-paftah"><div class="shimmer-bar"></div></div></div>
                     </div>
                 </div>
             </div>
@@ -338,6 +256,24 @@
                 <i class="fas fa-atom omax-icon"></i>
                 <div class="val en-font omax-gradient-text" style="font-size:3rem;">OMAX</div>
                 <div class="desc">تكنولوجيا النانو المتقدمة تتغلغل داخل الأنسجة لتفتيت البقع الصعبة وحماية الألوان.</div>
+            </div>
+
+            <div class="card item-oxygen">
+                <div class="lbl"><span>الأكسجين النشط</span><span class="en-font">ACTIVE OXYGEN</span></div>
+                <div class="sync-layout" style="justify-content: flex-start;">
+                     <div class="oxygen-val en-font">5.95<small>%</small></div>
+                </div>
+                <div class="desc">تعقيم عميق يقضي على البكتيريا والجراثيم، ويضمن لك بياضاً ناصعاً ونظافة آمنة.</div>
+                <div class="benchmark-box">
+                    <div class="bench-item">
+                        <div class="bench-meta"><span>Saudi Standard</span><span>0.3%</span></div>
+                        <div class="bench-track"><div class="bench-fill fill-std" style="width: 5%;"></div></div>
+                    </div>
+                    <div class="bench-item">
+                        <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span style="color:var(--brand-purple); font-weight:700;">5.95%</span></div>
+                        <div class="bench-track"><div class="bench-fill fill-paftah" style="width: 95%;"><div class="shimmer-bar"></div></div></div>
+                    </div>
+                </div>
             </div>
 
             <div class="card item-saso">
@@ -359,28 +295,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="sync-desc">مطابق للمواصفات السعودية (SASO) لضمان أعلى درجات الجودة والأمان.</div>
-            </div>
-
-            <div class="card item-oxygen">
-                <div class="lbl"><span>الأكسجين النشط</span><span class="en-font">ACTIVE OXYGEN</span></div>
-                <div class="val en-font">5.95<small>%</small></div>
-                <div class="desc">تعقيم عميق يقضي على البكتيريا والجراثيم، ويضمن لك بياضاً ناصعاً.</div>
-                
-                <div class="benchmark-box">
-                    <div class="bench-item">
-                        <div class="bench-meta"><span>Saudi Standard</span><span>0.3%</span></div>
-                        <div class="bench-track"><div class="bench-fill fill-std" style="width: 5%;"></div></div>
-                    </div>
-                    <div class="bench-item">
-                        <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span style="color:var(--brand-purple); font-weight:700;">5.95%</span></div>
-                        <div class="bench-track">
-                            <div class="bench-fill fill-paftah" style="width: 95%;">
-                                <div class="shimmer-bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="sync-desc">مطابق للمواصفات والمقاييس السعودية (SASO) لضمان أعلى درجات الجودة والأمان.</div>
             </div>
 
             <div class="card item-pack">
@@ -403,7 +318,7 @@
             <div class="platinum-inner">
                 <i class="fas fa-shield-alt" style="font-size:3rem; color:#555; margin-bottom:20px;"></i>
                 <h2 style="font-size:2rem; font-weight:800; margin-bottom:20px;">الضمان البلاتيني</h2>
-                <p style="color:#666; max-width:600px; margin:0 auto;">نلتزم باسترجاع كامل القيمة للشركات في حال عدم مطابقة المنتج للمواصفات المخبرية المعلنة.</p>
+                <p style="color:#666; max-width:600px; margin:0 auto;">نلتزم باسترجاع كامل القيمة للشركات في حال عدم مطابقة المنتج للمواصفات المخبرية المعلنة (SASO/Bureau Veritas).</p>
             </div>
         </div>
     </div>
@@ -415,17 +330,57 @@
                     <div class="logo">
                          <img src="logo.png" alt="PAFTAH" class="logo-img">
                     </div>
-                    <p>علامة تجارية سعودية تعيد تعريف معايير النظافة بالابتكار التقني.</p>
+                    <p>علامة تجارية سعودية تعيد تعريف معايير النظافة، بدمج الابتكار التقني مع الجودة العالمية لتقديم تجربة نقاء لا تضاهى.</p>
                     <div class="contact-group">
                         <a href="tel:+966598665571" class="contact-item">
                             <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                             <span class="contact-text">+966 59 866 5571</span>
                         </a>
+                        <a href="tel:+966552268433" class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <span class="contact-text">+966 55 226 8433</span>
+                        </a>
                     </div>
+                </div>
+                <div>
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">قصة بفتة</a></li>
+                        <li><a href="#">رؤيتنا والقيم</a></li>
+                        <li><a href="#">التوظيف</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Business</div>
+                    <ul class="footer-links">
+                        <li><a href="#">حلول المغاسل</a></li>
+                        <li><a href="#">طلبات الجملة</a></li>
+                        <li><a href="#">التصدير</a></li>
+                        <li><a href="#">كن موزعاً</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Support</div>
+                    <ul class="footer-links">
+                        <li><a href="#">تواصل معنا</a></li>
+                        <li><a href="#">الأسئلة الشائعة (FAQ)</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright en-font">Copyright © 2026 Paftah Inc. All rights reserved.</div>
+                <div class="copyright en-font">
+                    Copyright © 2026 Paftah Inc. All rights reserved.
+                </div>
+                <div class="social-legal">
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Sales Policy</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
