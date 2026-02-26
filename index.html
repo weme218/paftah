@@ -100,10 +100,10 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
-        /* === تعديل حجم الصورة هنا === */
+        /* تنسيق صورة المنتج (المقاس الأنيق) */
         .product-img {
             width: 100%; 
-            max-width: 480px; /* تم تصغير الحجم ليكون متزناً وأنيقاً */
+            max-width: 480px;
             filter: drop-shadow(0 50px 100px rgba(106, 76, 156, 0.2));
             margin-top: 50px; 
             transition: transform 0.5s;
@@ -113,7 +113,7 @@
 
         @media (max-width: 900px) {
             .product-img {
-                max-width: 380px; /* تعديل متناسب للجوال */
+                max-width: 380px;
                 margin-top: 30px;
             }
         }
@@ -241,19 +241,17 @@
         .size-label { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); }
         .size-usage { font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; margin-top: 4px; }
 
-        /* --- الضمان البلاتيني وتأثير اللمعة --- */
+        /* --- الضمان البلاتيني وتأثير اللمعة الاحترافي --- */
         .guarantee-wrapper { padding: 40px 24px; display: flex; justify-content: center; width: 100%; }
         .platinum-card {
             width: 100%; max-width: var(--content-width); background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 40%, #c0c0c0 100%);
             border-radius: 24px; padding: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); position: relative; overflow: hidden;
         }
 
-        /* === تعديل سرعة اللمعة هنا === */
         .flash-shine {
             position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
             background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
             transform: skewX(-20deg); 
-            /* تم إبطاء السرعة إلى 7 ثوانٍ واستخدام حركة انسيابية احترافية */
             animation: flash 7s infinite cubic-bezier(0.4, 0, 0.2, 1);
             pointer-events: none; z-index: 10;
         }
@@ -316,9 +314,10 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-<div class="logo en-font">
-    <img src="logo.svg" alt="PAFTAH Logo" style="height: 40px;">
-</div>            </div>
+                <div class="logo en-font">
+                    <img src="logo.svg" alt="PAFTAH Logo" style="height: 40px;">
+                </div> 
+            </div>
         </div>
     </nav>
 
@@ -331,7 +330,7 @@
             <a href="tel:+966598665571" class="cta-btn btn-outline">طلب عينة</a>
         </div>
 
-<img src="paftah-new-v99.png" class="product-img" alt="بفتة">
+        <img src="paftah-new-v99.png" class="product-img" alt="بفتة">
         <div class="product-card-desc">
             بفتة ليس مجرد مسحوق غسيل، بل هو قوة تنظيف مركزة. بفضل تركيبته المتطورة، يمنحك نظافة تتغلغل في أدق الألياف، ونعومة تشعر بها، لتعود ملابسك كما لو كانت جديدة في كل مرة.
         </div>
@@ -393,7 +392,7 @@
             <div class="card item-oxygen">
                 <div class="lbl"><span>الأكسجين النشط</span><span class="en-font">ACTIVE OXYGEN</span></div>
                 
-                <div class="sync-layout" style="justify-content: flex-end;">
+                <div class="sync-layout" style="justify-content: flex-start;">
                      <div class="oxygen-val en-font">5.95<small>%</small></div>
                 </div>
 
