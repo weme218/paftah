@@ -43,11 +43,9 @@
         }
         .nav-container { width: 100%; max-width: var(--content-width); padding: 0 24px; display: flex; justify-content: center; align-items: center; }
 
-        /* --- الهيرو (تم تعديل المسافات للتوسط الدقيق) --- */
+        /* --- الهيرو --- */
         .hero {
-            padding-top: 200px; 
-            padding-bottom: 0; /* تم الإلغاء لضبط المسافة السفلية بدقة */
-            text-align: center; 
+            padding-top: 200px; padding-bottom: 60px; text-align: center; 
             max-width: var(--content-width); margin: 0 auto;
             display: flex; flex-direction: column; align-items: center; position: relative;
             padding-left: 24px; padding-right: 24px;
@@ -77,13 +75,9 @@
         @media (max-width: 900px) { .product-img { max-width: 380px; margin-top: 30px; } }
         @keyframes floatHero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        /* وصف المنتج (تم ضبط الهوامش للتوسط المثالي) */
         .product-card-desc {
             background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 20px; padding: 40px; max-width: 780px;
-            /* الهامش العلوي 60، والسفلي 40 + 20 (حشوة الشبكة) = 60 متطابقة */
-            margin: 60px auto 40px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            border-radius: 20px; padding: 40px; max-width: 780px; margin: 40px auto 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.03);
             font-size: 1.2rem; color: var(--text-primary); line-height: 2; font-weight: 500;
         }
 
@@ -105,7 +99,6 @@
             .bento-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto auto; }
             .item-matter { grid-column: span 2; grid-row: 1; }
             .item-omax { grid-column: 3; grid-row: span 2; height: 100%; }
-            /* الأكسجين يمين والساسو وسط */
             .item-oxygen { grid-column: 1; grid-row: 2; }
             .item-saso { grid-column: 2; grid-row: 2; }
             .item-pack { grid-column: span 3; grid-row: 3; }
@@ -189,6 +182,7 @@
         .contact-icon { width: 36px; height: 36px; background: #F5F5F7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--brand-purple); font-size: 0.9rem; }
         .contact-text { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--text-primary); font-size: 1rem; direction: ltr; }
         .contact-item:hover .contact-icon { background: var(--brand-purple); color: #fff; }
+        .contact-item:hover .contact-text { color: var(--brand-purple); }
         .footer-heading { font-size: 0.85rem; font-weight: 700; color: #1D1D1F; text-transform: uppercase; margin-bottom: 25px; font-family: 'Poppins'; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 14px; }
@@ -242,12 +236,12 @@
                 <div class="desc">تركيز فعال يتفوق على المواصفات القياسية بـ 3 أضعاف.</div>
                 <div class="benchmark-box">
                     <div class="bench-item">
-                        <div class="bench-meta"><span>Standard GSO</span><span>6%</span></div>
-                        <div class="bench-track"><div class="bench-fill fill-std"></div></div>
+                        <div class="bench-meta"><span>Standard GSO</span><span class="en-font">6%</span></div>
+                        <div class="bench-track"><div class="bench-fill fill-std" style="width: 30%;"></div></div>
                     </div>
                     <div class="bench-item">
-                        <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span style="color:var(--brand-purple); font-weight:700;">18.93%</span></div>
-                        <div class="bench-track"><div class="bench-fill fill-paftah"><div class="shimmer-bar"></div></div></div>
+                        <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span class="en-font" style="color:var(--brand-purple); font-weight:700;">18.93%</span></div>
+                        <div class="bench-track"><div class="bench-fill fill-paftah" style="width: 95%;"><div class="shimmer-bar"></div></div></div>
                     </div>
                 </div>
             </div>
@@ -264,14 +258,19 @@
                      <div class="oxygen-val en-font">5.95<small>%</small></div>
                 </div>
                 <div class="desc">تعقيم عميق يقضي على البكتيريا والجراثيم، ويضمن لك بياضاً ناصعاً ونظافة آمنة.</div>
+                
                 <div class="benchmark-box">
                     <div class="bench-item">
-                        <div class="bench-meta"><span>Saudi Standard</span><span>0.3%</span></div>
+                        <div class="bench-meta"><span>Saudi Standard</span><span class="en-font">0.3%</span></div>
                         <div class="bench-track"><div class="bench-fill fill-std" style="width: 5%;"></div></div>
                     </div>
                     <div class="bench-item">
-                        <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span style="color:var(--brand-purple); font-weight:700;">5.95%</span></div>
-                        <div class="bench-track"><div class="bench-fill fill-paftah" style="width: 95%;"><div class="shimmer-bar"></div></div></div>
+                        <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span class="en-font" style="color:var(--brand-purple); font-weight:700;">5.95%</span></div>
+                        <div class="bench-track">
+                            <div class="bench-fill fill-paftah" style="width: 95%;">
+                                <div class="shimmer-bar"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -339,6 +338,10 @@
                         <a href="tel:+966552268433" class="contact-item">
                             <div class="contact-icon"><i class="fas fa-mobile-alt"></i></div>
                             <span class="contact-text">+966 55 226 8433</span>
+                        </a>
+                        <a href="mailto:info@paftah.com" class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <span class="contact-text en-font">info@paftah.com</span>
                         </a>
                     </div>
                 </div>
