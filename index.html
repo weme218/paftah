@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAFTAH | The New Concept</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-body: #F5F5F7;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --brand-purple: #6A4C9C;
+            --brand-purple-light: #9982bb; 
+            --bar-bg: #E5E5EA;
+            --radius: 28px;
+            --main-gradient: linear-gradient(135deg, var(--brand-purple), var(--brand-purple-light));
+            --content-width: 1100px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .en-font { font-family: 'Poppins', sans-serif; }
+
+        /* --- الهيدر --- */
+        nav {
+            position: fixed; top: 0; width: 100%; height: 70px;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav-container { 
+            width: 100%; max-width: var(--content-width); padding: 0 24px;
+            display: flex; justify-content: center; align-items: center; 
+        }
+        
+        /* تنسيق الشعار (صورة) */
+        .logo-img { height: 60px; width: auto; display: block; }
+
+        /* --- الهيرو --- */
+        .hero {
+            padding-top: 200px; padding-bottom: 60px; text-align: center; 
+            max-width: var(--content-width); margin: 0 auto;
+            display: flex; flex-direction: column; align-items: center; position: relative;
+            padding-left: 24px; padding-right: 24px;
+        }
+
+        .hero h1 { 
+            font-size: 4.5rem; font-weight: 800; color: #000; margin-bottom: 25px; 
+            letter-spacing: -1px; position: relative; z-index: 1; line-height: 1.4;
+        }
+        
+        .gradient-text {
+            background: var(--main-gradient);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            display: inline-block; padding-bottom: 15px;
+        }
+
+        .brand-desc { 
+            font-size: 1.3rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 40px; 
+            font-weight: 500;
+        }
+
+        /* --- الأزرار (أسود وأبيض فقط) --- */
+        .cta-group { display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap; }
+        
+        .cta-btn {
+            padding: 14px 36px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; 
+            text-decoration: none; transition: all 0.3s ease;
+            position: relative; z-index: 1; overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn-primary { 
+            background: #000; color: #fff; border: 2px solid #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .btn-primary:hover { 
+            background: #333; border-color: #333;
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline { 
+            background: transparent; color: #000; border: 2px solid #000; 
+        }
+        .btn-outline:hover { 
+            background: #000; color: #fff; 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        /* تنسيق صورة المنتج */
+        .product-img {
+            width: 100%; max-width: 360px; 
+            /* الظل والأنيميشن */
+            filter: drop-shadow(0 50px 100px rgba(106, 76, 156, 0.2));
+            margin-top: 50px; 
+            animation: floatHero 6s ease-in-out infinite;
+        }
+        @keyframes floatHero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        .product-card-desc {
+            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 20px; padding: 40px;
+            max-width: 780px; margin: 40px auto 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            font-size: 1.2rem; color: var(--text-primary); line-height: 2; font-weight: 500;
+        }
+
+        /* --- الشبكة --- */
+        .grid-section { 
+            padding: 20px 24px 80px;
+            background-image: radial-gradient(circle at 50% 50%, rgba(153, 130, 187, 0.04) 0%, transparent 70%);
+        }
+        .bento-grid {
+            display: grid; gap: 24px; max-width: var(--content-width); margin: 0 auto;
+            grid-template-columns: 1fr;
+        }
+        
+        .card {
+            background: #fff; border-radius: var(--radius); padding: 35px;
+            display: flex; flex-direction: column; position: relative; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: 0.3s;
+            height: 100%; justify-content: space-between;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+
+        .lbl { 
+            display: flex; justify-content: space-between; align-items: center; width: 100%;
+            font-size: 0.85rem; font-weight: 700; color: #A0A0A0; margin-bottom: 20px;
+        }
+
+        .val { font-size: 4rem; font-weight: 800; line-height: 1; color: var(--brand-purple-light); margin-bottom: 10px; }
+        .val small { font-size: 2.5rem; }
+        .desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0; }
+
+        @media (min-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto auto; }
+            .item-matter { grid-column: span 2; grid-row: 1; }
+            .item-omax { grid-column: 3; grid-row: span 2; height: 100%; }
+            .item-saso { grid-column: 1; grid-row: 2; }
+            .item-oxygen { grid-column: 2; grid-row: 2; }
+            .item-pack { grid-column: span 3; grid-row: 3; }
+        }
+
+        /* Benchmark */
+        .benchmark-box { margin-top: auto; padding-top: 20px; border-top: 1px solid #f5f5f5; }
+        .bench-item { margin-bottom: 15px; }
+        .bench-meta { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 6px; }
+        .bench-label { font-size: 0.85rem; font-weight: 600; color: #999; }
+        .bench-track { width: 100%; height: 10px; background: var(--bar-bg); border-radius: 20px; overflow: hidden; position: relative; }
+        .bench-fill { height: 100%; border-radius: 20px; transition: width 1s ease-out; }
+        .fill-std { background: #C7C7CC; width: 30%; }
+        .fill-paftah { background: var(--main-gradient); width: 95%; position: relative; overflow: hidden; }
+        .shimmer-bar {
+            position: absolute; top: 0; left: 0; bottom: 0; width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transform: translateX(-100%); animation: shineEffect 3s infinite linear;
+        }
+        @keyframes shineEffect { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+        /* OMAX */
+        .omax-glass {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245, 240, 255, 0.9));
+            border: 1px solid rgba(153, 130, 187, 0.15); 
+            box-shadow: 0 20px 60px rgba(106, 76, 156, 0.12);
+            justify-content: center; text-align: center;
+        }
+        .omax-glass::before {
+            content: ''; position: absolute; inset: 0; border-radius: var(--radius); padding: 2px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(153, 130, 187, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+        }
+        .omax-gradient-text { 
+            background: var(--main-gradient); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            display: inline-block; margin-bottom: 25px; 
+        }
+        .omax-icon { 
+            font-size: 5rem; margin-bottom: 20px; animation: pulse 3s infinite ease-in-out; 
+            background: var(--main-gradient); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+        }
+        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
+
+        /* SASO & Oxygen Layout */
+        .sync-layout { 
+            display: flex; align-items: center; justify-content: space-between; 
+            margin-bottom: 20px; gap: 10px; height: 100px; 
+        }
+        .saso-svg-container {
+            width: 100px; height: 100px; flex-shrink: 0;
+            background-color: var(--brand-purple-light);
+            border-radius: 22px; 
+            display: flex; align-items: center; justify-content: center;
+            padding: 12px;
+        }
+        .saso-svg-container svg { width: 100%; height: auto; }
+        .saso-text-val {
+            font-size: 3.5rem; font-weight: 800; line-height: 1; 
+            color: var(--brand-purple-light); margin: 0;
+        }
+        .oxygen-val {
+            font-size: 3.5rem; font-weight: 800; line-height: 1;
+            color: var(--brand-purple-light); 
+            display: flex; align-items: baseline; gap: 5px;
+        }
+        .oxygen-val small { font-size: 2rem; font-weight: 600; }
+        .sync-desc {
+            font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6;
+            min-height: 60px; display: flex; align-items: flex-end;
+        }
+
+        /* Packaging */
+        .sizes-row { display: flex; justify-content: space-between; align-items: flex-start; margin-top: auto; gap: 10px; }
+        .size-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; flex: 1; }
+        .bag-icon { background: #F4EFFD; border-radius: 12px; width: 100%; display: flex; align-items: center; justify-content: center; color: var(--brand-purple); transition: 0.3s; }
+        .size-item:hover .bag-icon { background: var(--brand-purple); color: #fff; }
+        .s-250 { height: 50px; } .s-1k { height: 65px; } .s-2k { height: 80px; } .s-25k { height: 95px; background: #eaddff; font-weight: bold;}
+        .size-label { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); }
+        .size-usage { font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; margin-top: 4px; }
+
+        /* Guarantee */
+        .guarantee-wrapper { padding: 40px 24px; display: flex; justify-content: center; width: 100%; }
+        .platinum-card {
+            width: 100%; max-width: var(--content-width); background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 40%, #c0c0c0 100%);
+            border-radius: 24px; padding: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); position: relative; overflow: hidden;
+        }
+        .platinum-inner {
+            background: #fff; border-radius: 21px; padding: 50px 30px; text-align: center;
+            background-image: radial-gradient(#f0f0f0 1.5px, transparent 1.5px); background-size: 20px 20px;
+        }
+
+        /* Footer */
+        footer { background: #FFFFFF; padding: 80px 0 30px; border-top: 1px solid #E5E5E5; margin-top: 60px; }
+        .footer-container { max-width: var(--content-width); margin: 0 auto; padding: 0 24px; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-brand p { font-size: 0.95rem; color: var(--text-secondary); margin-top: 20px; max-width: 320px; line-height: 1.8; }
+        .contact-group { margin-top: 25px; }
+        
+        .contact-item { 
+            display: flex; align-items: center; gap: 10px; margin-bottom: 12px; 
+            text-decoration: none; transition: 0.3s; 
+        }
+        .contact-icon { 
+            width: 36px; height: 36px; background: #F5F5F7; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; color: var(--brand-purple); font-size: 0.9rem; 
+        }
+        .contact-text { 
+            font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--text-primary); font-size: 1rem; 
+            direction: ltr; display: inline-block; unicode-bidi: embed; 
+        }
+        
+        .contact-item:hover .contact-icon { background: var(--brand-purple); color: #fff; }
+        .contact-item:hover .contact-text { color: var(--brand-purple); }
+        .footer-heading { font-size: 0.85rem; font-weight: 700; color: #1D1D1F; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; font-family: 'Poppins', sans-serif; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 14px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; transition: 0.2s; display: inline-block; }
+        .footer-links a:hover { color: var(--brand-purple); transform: translateX(-3px); }
+        .footer-bottom { border-top: 1px solid #F0F0F0; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .copyright { font-size: 0.85rem; color: #999; }
+        .social-legal { display: flex; align-items: center; gap: 30px; }
+        .legal-links a { font-size: 0.85rem; color: #888; text-decoration: none; margin-left: 20px; transition: 0.2s; }
+        .legal-links a:hover { color: #000; text-decoration: underline; }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 3rem; }
+            .footer-cols { grid-template-columns: 1fr; gap: 40px; text-align: right; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; text-align: right; }
+            .footer-bottom { flex-direction: column-reverse; align-items: center; text-align: center; }
+            .social-legal { flex-direction: column; gap: 15px; }
+            .legal-links a { margin: 0 10px; }
+            .contact-item { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="PAFTAH" class="logo-img">
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>مفهوم جديد <br> <span class="gradient-text">للنظــــــــــــــــافة</span></h1>
+        <p class="brand-desc">علامة تجارية سعودية بمعايير عالمية. نبتكر حلولاً ذكية لحياة أنقى.</p>
+
+        <div class="cta-group">
+            <a href="tel:+966598665571" class="cta-btn btn-primary">طلب للشركات</a>
+            <a href="tel:+966598665571" class="cta-btn btn-outline">طلب عينة</a>
+        </div>
+
+<img src="paftah-new-v99.png?v=12345" class="product-img" alt="Paftah Product">
+        <div class="product-card-desc">
+            بفتة ليس مجرد مسحوق غسيل، بل هو قوة تنظيف مركزة. بفضل تركيبته المتطورة، يمنحك نظافة تتغلغل في أدق الألياف، ونعومة تشعر بها، لتعود ملابسك كما لو كانت جديدة في كل مرة.
+        </div>
+    </section>
+
+    <section class="grid-section">
+        <div class="bento-grid">
+            
+            <div class="card item-matter">
+                <div class="lbl"><span>المادة الفعالة</span><span class="en-font">ACTIVE MATTER</span></div>
+                <div class="val en-font">18.93<small>%</small></div>
+                <div class="desc">تركيز فعال يتفوق على المواصفات القياسية بـ 3 أضعاف.</div>
+                <div class="benchmark-box">
+                    <div class="bench-item">
+                        <div class="bench-meta"><span>Standard GSO</span><span>6%</span></div>
+                        <div class="bench-track"><div class="bench-fill fill-std"></div></div>
+                    </div>
+                    <div class="bench-item">
+                        <div class="bench-meta"><span style="color:var(--brand-purple); font-weight:700;">Paftah</span><span style="color:var(--brand-purple); font-weight:700;">18.93%</span></div>
+                        <div class="bench-track">
+                            <div class="bench-fill fill-paftah">
+                                <div class="shimmer-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card omax-glass item-omax">
+                <i class="fas fa-atom omax-icon"></i>
+                <div class="val en-font omax-gradient-text" style="font-size:3rem;">OMAX</div>
+                <div class="desc">تكنولوجيا النانو المتقدمة تتغلغل داخل الأنسجة لتفتيت البقع الصعبة وحماية الألوان.</div>
+            </div>
+
+            <div class="card item-saso">
+                <div class="lbl"><span>الاعتماد</span><span class="en-font">CERTIFIED</span></div>
+                
+                <div class="sync-layout">
+                    <div class="saso-text-val en-font">SASO</div>
+                    <div class="saso-svg-container">
+                        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.56 71.68">
+                          <defs><style>.cls-1 {fill: #fff;}</style></defs>
+                          <g id="new-logo">
+                            <g>
+                              <path class="cls-1" d="M29.06,37.56h.01v-.02c2.04-3.42,4.35-6.66,6.91-9.71V0c-4.98,3.78-9.56,8.06-13.68,12.76h0c-3,3.41-5.73,7.05-8.17,10.89-.83,1.29-1.61,2.6-2.36,3.91-.76,1.3-1.51,2.63-2.22,3.99-2.1,4.04-3.89,8.23-5.35,12.53-2.01,5.92-3.42,12.02-4.21,18.22l24.09-13.88c1.36-3.75,3.02-7.38,4.96-10.86Z"/>
+                              <path class="cls-1" d="M45.5,37.57h0c1.94,3.48,3.6,7.11,4.97,10.86l24.09,13.88c-.79-6.2-2.2-12.3-4.21-18.22-1.45-4.31-3.24-8.5-5.35-12.53-.71-1.36-1.45-2.69-2.22-3.99-.75-1.32-1.53-2.63-2.36-3.91-2.44-3.83-5.17-7.47-8.17-10.89-4.12-4.71-8.71-8.99-13.7-12.77v27.85c2.57,3.04,4.88,6.29,6.93,9.71h0Z"/>
+                              <path class="cls-1" d="M37.36,51.71h-.02c-3.98-.06-7.96-.43-11.88-1.12L1.36,64.57c5.78,2.41,11.78,4.24,17.92,5.45,4.46.87,8.97,1.4,13.51,1.59,1.53.07,3.06.08,4.57.07,1.52.02,3.04,0,4.57-.08,4.54-.21,9.06-.76,13.51-1.66,6.13-1.23,12.12-3.08,17.88-5.51l-24.1-13.88c-3.92.7-7.89,1.09-11.88,1.15ZM22.45,59.08c.39.54,2.32,1.32,3.16,2.5.44.59.6,1.33.44,2.04-.31,1.83-1.92,2.86-4.06,2.51-1.21-.15-2.32-.74-3.11-1.67l1.14-1.25c.58.59,1.32.99,2.13,1.17.95.15,1.64-.21,1.76-.92.04-.26-.01-.52-.16-.73-.5-.72-2.21-1.24-3.06-2.43-.42-.56-.59-1.28-.47-1.97.29-1.75,1.9-2.66,3.86-2.33,1.13.14,2.16.71,2.9,1.58l-1.16,1.17c-.51-.53-1.16-.9-1.88-1.07-.86-.15-1.54.17-1.64.79-.05.22,0,.45.15.63ZM34.29,67.16l-.6-2.1-3.55-.23-.85,2.01-2.11-.12,4.18-9.65,2.1.13,2.99,10.09-2.15-.13ZM41.12,67.33c-1.21.1-2.42-.27-3.38-1.02l.87-1.46c.69.46,1.5.71,2.34.72.96-.04,1.56-.55,1.53-1.27-.01-.26-.12-.5-.31-.68-.64-.6-2.42-.77-3.49-1.76-.53-.47-.83-1.14-.85-1.84-.07-1.77,1.32-2.98,3.31-3.06,1.13-.08,2.26.26,3.15.95l-.9,1.39c-.61-.42-1.33-.65-2.07-.67-.87.03-1.48.47-1.45,1.09,0,.23.09.44.26.59.49.45,2.54.82,3.59,1.8.55.48.86,1.18.85,1.91.08,1.87-1.29,3.2-3.47,3.29ZM55.6,60.49c.47,3.16-1.19,5.5-3.96,5.92-2.84.43-5.11-1.39-5.57-4.48-.45-3.01,1.18-5.33,4.01-5.76,2.9-.44,5.09,1.39,5.52,4.32Z"/>
+                              <path class="cls-1" d="M51.4,64.66c2.02-.31,2.34-2.31,2.1-3.88-.29-1.93-1.61-3.16-3.25-2.92-1.56.24-2.37,1.84-2.07,3.87.31,2.05,1.67,3.16,3.22,2.92Z"/>
+                              <polygon class="cls-1" points="30.77 63.26 33.25 63.41 32.26 59.37 30.77 63.26"/>
+                            </g>
+                          </g>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="sync-desc">مطابق للمواصفات والمقاييس السعودية (SASO) لضمان أعلى درجات الجودة والأمان.</div>
+            </div>
+
+            <div class="card item-oxygen">
+                <div class="lbl"><span>الأكسجين النشط</span><span class="en-font">ACTIVE OXYGEN</span></div>
+                
+                <div class="sync-layout" style="justify-content: flex-end;">
+                     <div class="oxygen-val en-font">5.95<small>%</small></div>
+                </div>
+
+                <div class="sync-desc">تعقيم عميق يقضي على البكتيريا والجراثيم، ويضمن لك بياضاً ناصعاً ونظافة آمنة.</div>
+            </div>
+
+            <div class="card item-pack">
+                <div class="lbl"><span>خيارات التعبئة</span><span class="en-font">PACKAGING OPTIONS</span></div>
+                <div class="desc">خيارات متعددة تناسب كافة الاحتياجات.</div>
+                <div class="sizes-row">
+                    <div class="size-item"><div class="bag-icon s-250"><i class="fas fa-box-open"></i></div><span class="size-label en-font">250g</span><span class="size-usage">للتجربة والسفر</span></div>
+                    <div class="size-item"><div class="bag-icon s-1k"><i class="fas fa-shopping-bag"></i></div><span class="size-label en-font">1kg</span><span class="size-usage">للاستخدام اليومي</span></div>
+                    <div class="size-item"><div class="bag-icon s-2k"><i class="fas fa-shopping-bag"></i></div><span class="size-label en-font">2.5kg</span><span class="size-usage">للعائلات الكبيرة</span></div>
+                    <div class="size-item"><div class="bag-icon s-25k"><i class="fas fa-industry"></i></div><span class="size-label en-font">25kg</span><span class="size-usage">للتوفير والشركات</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="guarantee-wrapper">
+        <div class="platinum-card">
+            <div class="platinum-inner">
+                <i class="fas fa-shield-alt" style="font-size:3rem; color:#555; margin-bottom:20px;"></i>
+                <h2 style="font-size:2rem; font-weight:800; margin-bottom:20px;">الضمان البلاتيني</h2>
+                <p style="color:#666; max-width:600px; margin:0 auto;">نلتزم باسترجاع كامل القيمة للشركات في حال عدم مطابقة المنتج للمواصفات المخبرية المعلنة (SASO/Bureau Veritas).</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                         <img src="logo.png" alt="PAFTAH" class="logo-img">
+                    </div>
+                    <p>علامة تجارية سعودية تعيد تعريف معايير النظافة، بدمج الابتكار التقني مع الجودة العالمية لتقديم تجربة نقاء لا تضاهى.</p>
+                    <div class="contact-group">
+                        <a href="tel:+966598665571" class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <span class="contact-text">+966 59 866 5571</span>
+                        </a>
+                        <a href="tel:+966552268433" class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <span class="contact-text">+966 55 226 8433</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-heading">Company</div>
+                    <ul class="footer-links">
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">قصة بفتة</a></li>
+                        <li><a href="#">رؤيتنا والقيم</a></li>
+                        <li><a href="#">التوظيف</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Business</div>
+                    <ul class="footer-links">
+                        <li><a href="#">حلول المغاسل</a></li>
+                        <li><a href="#">طلبات الجملة</a></li>
+                        <li><a href="#">التصدير</a></li>
+                        <li><a href="#">كن موزعاً</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Support</div>
+                    <ul class="footer-links">
+                        <li><a href="#">تواصل معنا</a></li>
+                        <li><a href="#">الأسئلة الشائعة (FAQ)</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright en-font">
+                    Copyright © 2026 Paftah Inc. All rights reserved.
+                </div>
+                <div class="social-legal">
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Sales Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
