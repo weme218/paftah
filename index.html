@@ -46,7 +46,6 @@
             display: flex; justify-content: center; align-items: center; 
         }
         
-        /* تنسيق الشعار (صورة) */
         .logo-img { height: 60px; width: auto; display: block; }
 
         /* --- الهيرو --- */
@@ -73,7 +72,6 @@
             font-weight: 500;
         }
 
-        /* --- الأزرار (أسود وأبيض فقط) --- */
         .cta-group { display: flex; gap: 15px; align-items: center; justify-content: center; flex-wrap: wrap; }
         
         .cta-btn {
@@ -102,35 +100,24 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
-        /* تنسيق صورة المنتج */
+        /* === تعديل حجم الصورة هنا === */
         .product-img {
-    width: 100%; 
-    max-width: 700px; /* تم رفع الحجم بشكل ملحوظ للكمبيوتر */
-    filter: drop-shadow(0 50px 100px rgba(106, 76, 156, 0.2));
-    margin-top: 50px; 
-    transition: transform 0.5s;
-    content: url('paftah-new-v99.png');
-    animation: floatHero 6s ease-in-out infinite;
-}
+            width: 100%; 
+            max-width: 480px; /* تم تصغير الحجم ليكون متزناً وأنيقاً */
+            filter: drop-shadow(0 50px 100px rgba(106, 76, 156, 0.2));
+            margin-top: 50px; 
+            transition: transform 0.5s;
+            content: url('paftah-new-v99.png');
+            animation: floatHero 6s ease-in-out infinite;
+        }
 
-/* ضبط خاص للجوال لضمان التناسب */
-@media (max-width: 900px) {
-    .product-img {
-        max-width: 420px; /* حجم مثالي لشاشات الجوال */
-        margin-top: 30px;
-    }
-}
-    /* الحفاظ على اسم الصورة المرفوعة */
-    content: url('paftah-new-v99.png');
-    animation: floatHero 6s ease-in-out infinite;
-}
+        @media (max-width: 900px) {
+            .product-img {
+                max-width: 380px; /* تعديل متناسب للجوال */
+                margin-top: 30px;
+            }
+        }
 
-/* تعديل بسيط للجوال لضمان عدم خروج الصورة عن الإطار */
-@media (max-width: 900px) {
-    .product-img {
-        max-width: 380px;
-    }
-}
         @keyframes floatHero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
         .product-card-desc {
@@ -254,14 +241,30 @@
         .size-label { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); }
         .size-usage { font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; margin-top: 4px; }
 
-        /* Guarantee */
+        /* --- الضمان البلاتيني وتأثير اللمعة --- */
         .guarantee-wrapper { padding: 40px 24px; display: flex; justify-content: center; width: 100%; }
         .platinum-card {
             width: 100%; max-width: var(--content-width); background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 40%, #c0c0c0 100%);
             border-radius: 24px; padding: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); position: relative; overflow: hidden;
         }
+
+        /* === تعديل سرعة اللمعة هنا === */
+        .flash-shine {
+            position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
+            transform: skewX(-20deg); 
+            /* تم إبطاء السرعة إلى 7 ثوانٍ واستخدام حركة انسيابية احترافية */
+            animation: flash 7s infinite cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none; z-index: 10;
+        }
+        @keyframes flash { 
+            0% { left: -150%; } 
+            25% { left: 150%; } 
+            100% { left: 150%; } 
+        }
+
         .platinum-inner {
-            background: #fff; border-radius: 21px; padding: 50px 30px; text-align: center;
+            background: #fff; border-radius: 21px; padding: 50px 30px; text-align: center; position: relative; z-index: 2;
             background-image: radial-gradient(#f0f0f0 1.5px, transparent 1.5px); background-size: 20px 20px;
         }
 
@@ -300,7 +303,6 @@
 
         @media (max-width: 900px) {
             .hero h1 { font-size: 3rem; }
-            .footer-cols { grid-template-columns: 1fr; gap: 40px; text-align: right; }
             .footer-top { grid-template-columns: 1fr; gap: 40px; text-align: right; }
             .footer-bottom { flex-direction: column-reverse; align-items: center; text-align: center; }
             .social-legal { flex-direction: column; gap: 15px; }
@@ -414,6 +416,7 @@
 
     <div class="guarantee-wrapper">
         <div class="platinum-card">
+            <div class="flash-shine"></div>
             <div class="platinum-inner">
                 <i class="fas fa-shield-alt" style="font-size:3rem; color:#555; margin-bottom:20px;"></i>
                 <h2 style="font-size:2rem; font-weight:800; margin-bottom:20px;">الضمان البلاتيني</h2>
